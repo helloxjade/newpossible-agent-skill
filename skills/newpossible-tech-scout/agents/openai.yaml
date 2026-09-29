@@ -1,0 +1,5 @@
+interface:
+  display_name: "NewPossible Tech Scout"
+  short_description: "过滤新技术噪音，只交付一个有证据的采用决定"
+  brand_color: "#205E83"
+  default_prompt: "Use $newpossible-tech-scout to find the one new technology worth validating for my project and return an evidence-backed adoption decision."

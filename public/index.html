@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8f0f3">
+  <title>NewPossible — 今天，什么刚刚变得可能？</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="NewPossible 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>NEW<span class="brand-accent">POSSIBLE</span></span></a>
+      <div class="top-meta"><span class="pulse-dot"></span><span>QUIET CAPABILITY RADAR / NVIDIA GPU</span></div>
+      <span class="edition">HACKATHON MVP · 2026</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AMBIENT TECHNOLOGY RADAR <span class="slash">/</span> 低打扰能力观察员</p>
+          <h1>你不用追赶<br><em>技术更新。</em></h1>
+          <p class="hero-lede">NewPossible 是技术采用决策 Agent。它从在线候选和你指定的技术中，只选一个值得验证的变化，再用受控实验把“看起来不错”变成可采用的证据。</p>
+          <div class="stack-proof" aria-label="Agent 技术栈">
+            <span><small>AGENT</small>Vercel AI SDK</span>
+            <span><small>MODEL</small>StepFun 3.7</span>
+            <span><small>DISCOVERY</small>NVIDIA + Open Web</span>
+            <span><small>PROOF</small>GX10 Runner</span>
+          </div>
+        </div>
+        <div class="hero-instrument quiet-radar" aria-label="技术信号过滤结果">
+          <div class="instrument-label"><span>ATTENTION FILTER / 本地证据基线</span><span>QUIET MODE</span></div>
+          <div id="radar-summary" class="radar-summary"><span>正在读取信号…</span></div>
+          <div class="instrument-bottom"><span>LIVE CATALOG SEARCHES ON SUBMIT</span><span>01 READY</span></div>
+        </div>
+      </section>
+
+      <div class="flow-strip" aria-label="工作流程"><span><b>01</b> 读取 Skill</span><span class="flow-line"></span><span><b>02</b> 在线发现</span><span class="flow-line"></span><span><b>03</b> 只选一个</span><span class="flow-line"></span><span><b>04</b> GX10 实证</span></div>
+
+      <div class="workspace">
+        <aside class="left-column">
+          <section class="panel goal-panel" aria-labelledby="goal-title">
+            <div class="panel-header"><div><span class="section-index">01 / PROJECT INTENT</span><h2 id="goal-title">项目目标卡</h2></div><span class="panel-icon">↗</span></div>
+            <form id="goal-form">
+              <div class="demo-presets" aria-label="比赛完整演示">
+                <span>三个证据场景</span>
+                <div>
+                  <button type="button" class="preset-button active" data-preset="data">数据处理加速<small>性能证据</small></button>
+                  <button type="button" class="preset-button" data-preset="project">开源项目采用<small>项目证据</small></button>
+                  <button type="button" class="preset-button" data-preset="model">新模型试用<small>模型证据</small></button>
+                </div>
+                <p id="preset-note" class="preset-note">完整实测：在 GX10 上比较 pandas 与 cuDF。</p>
+              </div>
+              <label>当前目标<textarea id="objective" name="objective" rows="3" required maxlength="300"></textarea></label>
+              <label>现有技术栈<input id="stack" name="stack" required maxlength="300"></label>
+              <label>约束<input id="constraints" name="constraints" required maxlength="300"></label>
+              <label>希望获得的能力<input id="desired" name="desired" required maxlength="300"></label>
+              <div class="candidate-channel"><span><i></i>多源在线候选</span><strong>NVIDIA · GitHub · Hugging Face</strong></div>
+              <label><span class="label-row"><span>你已关注的技术（可选）</span><b id="candidate-count">0 / 5</b></span><textarea id="candidate" name="candidate" rows="3" maxlength="1000" placeholder="每行一项，可填写技术名称或官方链接；会与在线候选一起评分"></textarea></label>
+              <button id="analyze-button" class="primary-button" type="submit"><span>让 Agent 选择唯一候选</span><span aria-hidden="true">↗</span></button>
+              <p class="form-note">最终只占用你一次注意力。<span id="provider-badge">加载中</span></p>
+            </form>
+          </section>
+
+          <section class="panel source-panel" aria-labelledby="sources-title">
+            <div class="panel-header"><div><span class="section-index">LOCAL EVIDENCE BASE / 可追溯</span><h2 id="sources-title">本地证据基线</h2></div><span class="panel-icon">⌁</span></div>
+            <p class="source-intro">这些是演示时可复核的本地信号。提交目标后，Scout Agent 还会实时搜索 NVIDIA Catalog，并按目标补充 GitHub 项目或 Hugging Face 模型；你也可以指定最多五个候选。</p>
+            <div id="source-list" class="source-list" aria-live="polite"></div>
+            <div id="source-detail" class="source-detail"></div>
+          </section>
+        </aside>
+
+        <div class="right-column">
+          <section id="trace-panel" class="panel trace-panel" aria-labelledby="trace-title">
+            <div class="panel-header"><div><span class="section-index">02 / AGENT RUN TRACE</span><h2 id="trace-title">Agent 决策飞行记录器</h2></div><span id="trace-state" class="runner-badge">READY</span></div>
+            <div id="agent-trace" class="agent-trace" aria-live="polite">
+              <div class="trace-step ready"><span class="trace-dot">01</span><div><b>Skill 已装载</b><small>newpossible-tech-scout</small></div></div>
+              <div class="trace-step"><span class="trace-dot">02</span><div><b>搜索官方候选</b><small>等待目标</small></div></div>
+              <div class="trace-step"><span class="trace-dot">03</span><div><b>模型评分并选择</b><small>等待候选</small></div></div>
+              <div class="trace-step"><span class="trace-dot">04</span><div><b>进入证据闸门</b><small>PROVE / WATCH / REJECT</small></div></div>
+            </div>
+          </section>
+
+          <section id="delta-panel" class="panel delta-panel" aria-labelledby="delta-title">
+            <div class="panel-header"><div><span class="section-index">03 / ONE DECISION</span><h2 id="delta-title">今天需要你注意的能力</h2></div><span class="panel-icon">◇</span></div>
+            <div id="delta-content" class="empty-state"><span class="empty-glyph">1</span><h3>十条信号，只留下一个决定</h3><p>系统已过滤无关、过重或缺少前置条件的项目。点击目标卡按钮查看结果。</p></div>
+          </section>
+
+          <section id="proof-panel" class="panel proof-panel" aria-labelledby="proof-title">
+            <div class="panel-header"><div><span class="section-index">04 / PROOF CONTRACT</span><h2 id="proof-title">候选技术最小实验</h2></div><span id="runner-badge" class="runner-badge">CHECKING</span></div>
+            <div id="proof-content" class="proof-intro"><div class="track"><span></span><span></span><span></span></div><p>实验计划会在能力增量生成后出现。</p></div>
+          </section>
+
+          <section id="evidence-panel" class="panel evidence-panel" aria-labelledby="evidence-title">
+            <div class="panel-header"><div><span class="section-index">05 / OBSERVED, NOT CLAIMED</span><h2 id="evidence-title">证据与采用决定</h2></div><span class="panel-icon">⌑</span></div>
+            <div id="evidence-content" class="evidence-empty"><span>AWAITING PROOF</span><p>实验执行后，这里会显示实测指标和采用决定。</p></div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer><span>NEWPOSSIBLE / AGENT SKILLS HACKATHON</span><p>真正改变你项目的那一刻，我们才来打扰你。</p><span>QUIET RADAR 0.2</span></footer>
+  </div>
+  <script>if(location.protocol==='file:')document.body.insertAdjacentHTML('afterbegin','<div class="protocol-warning"><strong>当前是静态文件预览</strong><span>样式可以查看，数据与交互需先运行 <code>npm start</code>，再打开 <code>http://localhost:3210</code>。</span></div>')</script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

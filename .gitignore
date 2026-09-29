@@ -1,0 +1,9 @@
+node_modules/
+.env
+reports/
+work/runs/
+work/exports/
+.tmp/
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,32 @@
+{
+  "name": "newpossible-mvp",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --import tsx server.js",
+    "remote-runner": "node remote-runner.js",
+    "test": "node --import tsx --test",
+    "typecheck": "tsc --noEmit",
+    "smoke:agent": "node --import tsx scripts/smoke-agent.ts",
+    "validate:skill": "node scripts/validate-skill.mjs",
+    "eval:skill:quality": "skillevaluator quality-check skills/newpossible-tech-scout",
+    "eval:skill:tier1": "skillevaluator tier1 skills/newpossible-tech-scout",
+    "eval:skill:tier2": "skillevaluator tier2 skills/newpossible-tech-scout",
+    "eval:skill:dataset": "skillevaluator tier3 validate skills/newpossible-tech-scout",
+    "eval:skill:tier3": "skillevaluator tier3 skills/newpossible-tech-scout"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@ai-sdk/openai-compatible": "^3.0.59",
+    "ai": "^7.0.122",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,123 @@
+[
+  {
+    "id": "accelerated-computing-cudf",
+    "title": "NVIDIA cuDF 26.08",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/accelerated-computing-cudf/SKILL.md",
+    "summary": "NVIDIA 官方 Skill 提供 cuDF GPU DataFrame 和 pandas 加速指引，建议在 10 万行以上的真实工作负载中检查正确性和实测加速。",
+    "tags": ["cuDF", "pandas", "GPU 加速"],
+    "verifiedDetail": "cuDF 26.08、CUDA 13、500 万行 CPU/GPU 对照",
+    "radarState": "actionable",
+    "radarReason": "能直接改变大表数据处理成本，而且可在当前 GX10 上用同一份输入做 CPU/GPU 对照。"
+  },
+  {
+    "id": "rag-eval",
+    "title": "RAG Eval",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/rag-eval/SKILL.md",
+    "summary": "官方 Skill 使用 corpus/ 与 train.json 组织文件系统 RAG 评测，并分析质量结果。",
+    "tags": ["评测", "RAG", "证据"],
+    "radarState": "filtered",
+    "radarReason": "当前目标不是建设 RAG 评测系统。"
+  },
+  {
+    "id": "rag-perf",
+    "title": "RAG Perf",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/rag-perf/SKILL.md",
+    "summary": "官方 Skill 对已部署的 RAG Blueprint 服务运行 profiling 与负载测试，用于延迟和吞吐量评估。",
+    "tags": ["性能", "RAG"],
+    "radarState": "filtered",
+    "radarReason": "需要已有 RAG Blueprint 服务，当前不满足前置条件。"
+  },
+  {
+    "id": "data-designer",
+    "title": "Data Designer",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/data-designer/SKILL.md",
+    "summary": "官方 Skill 用 Data Designer 构建合成数据集或数据生成流水线，可作为实验数据准备线索。",
+    "tags": ["数据", "实验"],
+    "radarState": "watching",
+    "radarReason": "可能帮助生成实验数据，但当前没有明确数据生成任务。"
+  },
+  {
+    "id": "nemo-retriever-mcp",
+    "title": "NeMo Retriever MCP",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/nemo-retriever-mcp/SKILL.md",
+    "summary": "官方 Skill 通过 NeMo Retriever MCP 查询或导入文档，并要求保留可用的来源标识。",
+    "tags": ["检索", "MCP"],
+    "radarState": "filtered",
+    "radarReason": "与当前 GPU 项目验证目标无直接关系。"
+  },
+  {
+    "id": "rag-blueprint",
+    "title": "RAG Blueprint",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/rag-blueprint/SKILL.md",
+    "summary": "官方目录中的 RAG Blueprint 条目，可作为后续完整服务部署线索。",
+    "tags": ["RAG", "部署"],
+    "radarState": "filtered",
+    "radarReason": "完整 RAG 服务部署成本高于当前最小验证需要。"
+  },
+  {
+    "id": "vss-ask-video",
+    "title": "VSS Ask Video",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/vss-ask-video/SKILL.md",
+    "summary": "官方 Skill 让 VSS Agent 对录制片段提出需要重新查看视频画面的视觉问题；尚未纳入本地 proof。",
+    "tags": ["视频", "问答"],
+    "radarState": "watching",
+    "radarReason": "GX10 能运行视频工作负载，但当前尚未提供视频任务样本。"
+  },
+  {
+    "id": "vss-search-archive",
+    "title": "VSS Search Archive",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/vss-search-archive/SKILL.md",
+    "summary": "官方 Skill 对已归档视频运行 VSS fusion search，或导入视频文件与 RTSP 流以供搜索。",
+    "tags": ["视频", "检索"],
+    "radarState": "filtered",
+    "radarReason": "需要完整 VSS 服务，本轮不做重型部署。"
+  },
+  {
+    "id": "vss-summarize-video",
+    "title": "VSS Summarize Video",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/vss-summarize-video/SKILL.md",
+    "summary": "官方 Skill 调用视频总结服务处理已录制片段，并有 VLM 回退路径。",
+    "tags": ["视频", "总结"],
+    "radarState": "filtered",
+    "radarReason": "当前没有必须验证的视频总结目标。"
+  },
+  {
+    "id": "skill-card-generator",
+    "title": "Skill Card Generator",
+    "kind": "NVIDIA Skill",
+    "date": "2026-09-27",
+    "dateLabel": "查验日期",
+    "url": "https://github.com/NVIDIA/skills/blob/main/skills/skill-card-generator/SKILL.md",
+    "summary": "官方 Skill 为已有 Agent Skill 生成治理卡片并检查提交材料；与本产品的 Skill 导出不同。",
+    "tags": ["Skill", "导出"],
+    "radarState": "filtered",
+    "radarReason": "它负责治理卡，不验证新技术本身。"
+  }
+]
