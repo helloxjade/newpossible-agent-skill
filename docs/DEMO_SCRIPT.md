@@ -12,10 +12,9 @@ GX10 启动 `npm run remote-runner`；Mac 保持 SSH 3211 端口转发并启动 
 | 12–26 秒 | 目标卡和候选入口 | “我给出项目目标，也能指定关注的技术。Scout Agent 同时查 NVIDIA Catalog、GitHub 或 Hugging Face。” |
 | 26–42 秒 | 飞行记录器 | “Scout 负责发现，Decision Agent 按相关性、能力增量、可行性、证据和验证成本只选一个。” |
 | 42–58 秒 | Capability Delta 与 Proof Contract | “Skill 不相信宣传数字。这个证明固定 500 万行输入、正确性检查、三轮中位数和 1.2 倍门槛。” |
-| 58–78 秒 | 点击 GX10 实验并展示指标 | “GX10 用 NVIDIA RAPIDS cuDF 对比 pandas。只有结果一致且实测达标，系统才建议采用。” |
+| 58–78 秒 | 点击 GX10 实验并展示指标 | “GX10 用 NVIDIA RAPIDS cuDF 对比 pandas。GPU 计算热路径实测 3.33 倍，但系统同时展示传输成本，只建议用于数据常驻 GPU 或能摊薄传输的流水线。” |
 | 78–90 秒 | 最终决定和 Skill 目录 | “结论和原始证据被保存。参赛交付是仓库中的 NewPossible Tech Scout Skill，Web 是它的可观测 Harness。” |
 
 ## 失败备用
 
 如果正式录制时 GX10 连接中断，停止录制并恢复 runner 后重录。不要用模拟结果代替 GPU 指标。已经保存的 evidence 只能用于解释历史运行，不能冒充当前实验。
-

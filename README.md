@@ -14,6 +14,10 @@ NewPossible 的参赛交付是 `newpossible-tech-scout` Agent Skill。基于 Ver
 
 比赛 Demo 使用一个明确的数据处理项目作为验证对象：现有 pandas 热路径需要处理 500 万行设备日志，希望在结果一致的前提下至少加速 1.2 倍。NewPossible 从技术信号中选择 NVIDIA RAPIDS cuDF，并在相同的固定种子、数据和分组聚合负载下分别运行 pandas CPU 与 cuDF GPU，各测量三轮并取中位数。主服务会根据原始指标重新计算结论，不接受 runner 自报的“成功”。运行只产生新证据，不会动态改写 Skill；参赛 Skill 始终是仓库中的 `skills/newpossible-tech-scout/`。
 
+## GX10 真实验证结果
+
+2026-09-29 在比赛 GX10 / NVIDIA GB10 上运行固定 RAPIDS cuDF 26.08 容器：500 万行、三轮中位数、CPU/GPU 结果一致，pandas CPU 为 53.16 ms，cuDF GPU 计算为 15.98 ms，GPU 计算热路径加速 3.33x。主机到 GPU 的一次性传输为 350.71 ms，因此结论限定为：当数据保持在 GPU 上，或连续算子能够摊薄传输成本时采用 cuDF；单次从 CPU 内存传入再计算的任务仍应继续观察。原始结构化证据见 [`docs/evidence/cudf-gx10-2026-09-29.json`](docs/evidence/cudf-gx10-2026-09-29.json)。
+
 ## 核心亮点
 
 - **低打扰能力雷达**：把 10 条信号压缩为 7 条忽略、2 条观察、1 条需要决定，减少无效阅读。
@@ -171,6 +175,7 @@ Gitleaks 只补充密钥泄露扫描，并非 Skill 运行或参赛包生成的�
 - `skills/newpossible-tech-scout/`：固定版本、可安装的参赛主 Skill
 - `docs/IMPLEMENTATION_PLAN.md`：比赛开发计划与完成状态
 - `docs/JUDGING_MATRIX.md`：评审标准与仓库证据逐项对照
+- `docs/evidence/cudf-gx10-2026-09-29.json`：GX10 / GB10 真实 cuDF 对照证据
 - `docs/SUBMISSION_CHECKLIST.md`：已完成项与提交前真实环境门禁
 - `docs/SUBMISSION_FORM.md`：比赛表单字段与提交资料状态
 - `docs/VIDEO_SUBMISSION.md`：5 分钟内演示视频脚本、标题和简介

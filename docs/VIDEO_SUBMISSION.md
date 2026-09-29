@@ -19,7 +19,7 @@ NewPossible 是以 `newpossible-tech-scout` Agent Skill 交付的技术采用决
 | 0:50–1:15 | Agent 飞行记录器 | Scout Agent 完成多源搜索，Decision Agent 五维评分后只选一个候选。 |
 | 1:15–1:40 | Capability Delta 与 Proof Contract | 展示项目关联、固定基线、候选、输入、正确性和 1.2x 门槛。 |
 | 1:40–2:25 | GX10 终端与页面实测 | 展示 runner、NVIDIA RAPIDS 容器、CPU/GPU 耗时、传输耗时和 parity。 |
-| 2:25–2:45 | adopt/watch/reject 与证据 | 结论来自当次指标，未达标会诚实返回 watch 或 reject。 |
+| 2:25–2:45 | adopt/watch/reject 与证据 | 解释 3.33x 是 GPU 计算热路径指标；同时展示 350.71 ms 传输成本和适用边界。 |
 | 2:45–3:00 | 仓库中的 Skill | 展示 `SKILL.md`、evals、Skill Card、Benchmark 和 README。 |
 
 ## 必拍证据
@@ -43,4 +43,3 @@ NewPossible 是以 `newpossible-tech-scout` Agent Skill 交付的技术采用决
 - `.env` 内容、StepFun API Key、服务器密码和 SSH 私钥。
 - SSH 输入密码的过程。
 - 旧版静态 `file://` 页面。
-

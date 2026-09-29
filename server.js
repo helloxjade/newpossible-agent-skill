@@ -98,7 +98,7 @@ const server = http.createServer(async (request, response) => {
           : evidence.kind === 'huggingface-model-readiness'
             ? passed ? 'PILOT：模型卡的许可、任务、加载框架和访问条件明确，可以进入小样本试用；尚未验证质量和性能。' : 'WATCH：模型采用前提不完整，暂不下载权重。'
             : evidence.status === 'passed'
-              ? `ADOPT：结果一致，当前负载实测 ${evidence.metric.speedup}x 加速，值得将这条 pandas 热路径迁移到 cuDF。`
+              ? `ADOPT（GPU 常驻热路径）：结果一致，GPU 计算实测 ${evidence.metric.speedup}x 加速。当前传输耗时 ${evidence.metric.transferMs} ms；只有数据保持在 GPU 上或连续算子能够摊薄传输成本时才建议迁移，单次 CPU 来源任务仍应 WATCH。`
               : evidence.status === 'insufficient'
                 ? `WATCH：结果一致，但 ${evidence.metric.speedup}x 加速未达到 1.2x 采用门槛。`
                 : 'REJECT：CPU 与 GPU 结果不一致，不建议迁移当前负载。'

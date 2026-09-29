@@ -16,8 +16,8 @@
 
 ## 提交前必须完成
 
-- [ ] 在 GX10 页面运行 `cudf-pandas-benchmark`，确认出现 CPU/GPU 原始指标、结果一致性和采用决定。
-- [ ] 保留录屏对应的 `work/runs/*.json`，不要把包含临时数据的整个 `work/` 提交到公开仓库。
+- [x] 在 GX10 运行 `cudf-pandas-benchmark`：结果一致，GPU 计算热路径 3.33x，原始证据已保存到 `docs/evidence/`。
+- [ ] 正式录屏时从页面再运行一次，并确认指标与仓库证据处于同一数量级。
 - [ ] 将完整项目推送到公开 GitHub 或码云仓库，并用无痕窗口检查 URL。
 - [ ] 按 [VIDEO_SUBMISSION.md](VIDEO_SUBMISSION.md) 录制不超过 5 分钟的演示，上传 B 站并检查公开视频 URL。
 - [ ] 填写并复核 [比赛提交表单准备单](SUBMISSION_FORM.md)，最后提交线上表单。

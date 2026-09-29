@@ -1,0 +1,61 @@
+{
+  "id": "c71add75-9b5f-4aa9-9ab9-df27ac53bf2e",
+  "goal": {
+    "objective": "用 pandas 处理 500 万行设备日志，完成过滤与分组聚合",
+    "stack": "Python、pandas、Docker；可使用 NVIDIA GPU",
+    "constraints": "结果必须一致；验证控制在 10 分钟内；不改动生产环境",
+    "desired": "判断是否有新技术能让当前数据处理热路径至少加速 1.2 倍",
+    "candidate": ""
+  },
+  "deltaId": "cudf-pandas-adoption-proof",
+  "dataset": "cudf-5m-groupby",
+  "evidence": {
+    "status": "passed",
+    "runner": "nvidia-cudf-adoption-experiment",
+    "actualExecution": true,
+    "fixtureType": "workload-benchmark",
+    "measuredAt": "2026-09-29T13:36:24.174Z",
+    "candidate": {
+      "id": "accelerated-computing-cudf",
+      "name": "NVIDIA cuDF",
+      "version": "26.08",
+      "image": "nvcr.io/nvidia/rapidsai/base:26.08-cuda13-py3.14",
+      "workload": "数值过滤 + 4096 分组聚合"
+    },
+    "metric": {
+      "rows": 5000000,
+      "rounds": 3,
+      "cpuMs": 53.16,
+      "gpuMs": 15.98,
+      "transferMs": 350.71,
+      "speedup": 3.33,
+      "groups": 4096,
+      "durationMs": 2085
+    },
+    "samples": [
+      {
+        "check": "计算结果一致",
+        "expected": "CPU/GPU parity",
+        "actual": "matched",
+        "passed": true
+      },
+      {
+        "check": "加速值得采用",
+        "expected": ">= 1.2x",
+        "actual": "3.33x",
+        "passed": true
+      }
+    ],
+    "logs": [
+      "5,000,000 rows / 3 measured rounds",
+      "CPU median 53.16 ms",
+      "GPU median 15.98 ms / transfer 350.71 ms",
+      "Observed speedup 3.33x / parity confirmed"
+    ]
+  },
+  "sourceIds": [
+    "accelerated-computing-cudf"
+  ],
+  "recommendation": "ADOPT（GPU 常驻热路径）：结果一致，GPU 计算实测 3.33x 加速。当前传输耗时 350.71 ms；只有数据保持在 GPU 上或连续算子能够摊薄传输成本时才建议迁移，单次 CPU 来源任务仍应 WATCH。",
+  "interpretationScope": "speedup compares the measured CPU and GPU compute sections; transferMs is reported separately and must be included when evaluating an end-to-end CPU-origin workflow"
+}
