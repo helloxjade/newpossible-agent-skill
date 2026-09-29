@@ -179,4 +179,4 @@ Gitleaks 只补充密钥泄露扫描，并非 Skill 运行或参赛包生成的�
 - `docs/SUBMISSION_CHECKLIST.md`：已完成项与提交前真实环境门禁
 - `docs/SUBMISSION_FORM.md`：比赛表单字段与提交资料状态
 - `docs/VIDEO_SUBMISSION.md`：5 分钟内演示视频脚本、标题和简介
-- `docs/HACKATHON_ARTICLE_DRAFT.md`：CSDN/知乎参赛征文初稿
+- `docs/HACKATHON_ARTICLE.md`：CSDN/知乎参赛征文

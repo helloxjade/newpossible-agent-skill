@@ -12,7 +12,7 @@
 - [x] Skill Card、Apache-2.0 许可、Benchmark 和验证报告。
 - [x] 14 项 Web/API/Agent/runner 回归测试、TypeScript 类型检查和 Skill 校验。
 - [x] README 超过 500 字，包含亮点、架构、部署、模型优化、Agent Skills 和技术栈。
-- [x] 评审标准对照表、Demo 视频脚本、表单准备单和参赛征文初稿。
+- [x] 评审标准对照表、Demo 视频脚本、表单准备单和参赛征文。
 
 ## 提交前必须完成
 

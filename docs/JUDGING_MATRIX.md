@@ -14,7 +14,7 @@
 | 项目完整性 20% | Web、API、双 Agent、GPU runner、三类证据适配器、文档和测试 | 14 项测试、TypeScript 类型检查、Skill 校验 | 已完成 |
 | 平台适配性 15% | CUDA 13、NVIDIA Container Toolkit、NGC RAPIDS cuDF 26.08、GX10/GB10；StepFun 3.7 | README 技术栈、`docs/GX10_SETUP.md`、固定 NGC 镜像、真实 evidence | 实测完成，视频待录 |
 | 演示效果 10% | 目标卡 → 多源发现 → 唯一候选 → Proof Contract → GX10 实测 → 决定 | `docs/VIDEO_SUBMISSION.md`、`docs/DEMO_SCRIPT.md` | 脚本完成，视频待上传 |
-| 赛事征文 5% | 已准备完整文章初稿 | `docs/HACKATHON_ARTICLE_DRAFT.md` | 初稿完成，公开 URL 待补 |
+| 赛事征文 5% | 已准备完整文章初稿 | `docs/HACKATHON_ARTICLE.md` | 初稿完成，公开 URL 待补 |
 
 ## 技术栈的真实边界
 
