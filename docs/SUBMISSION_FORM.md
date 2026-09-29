@@ -13,7 +13,7 @@
 | 项目应用领域 | 建议选择“云服务”；如团队更强调 GPU 评测可选择“高性能计算 / 科学计算” | 待确认 |
 | 项目及报告书网址 | <https://github.com/helloxjade/newpossible-agent-skill>，README 作为项目报告 | 已完成 |
 | 项目 Demo 视频网址 | B 站公开视频 URL，时长不超过 5 分钟 | 待录制和上传 |
-| 参赛征文网址 | 可选加分项：CSDN 或知乎公开文章 URL | 已发布到 GitHub |
+| 参赛征文网址 | <https://github.com/helloxjade/newpossible-agent-skill/blob/main/docs/HACKATHON_ARTICLE.md> | 已发布到 GitHub |
 | 团队照片 | 真实团队合影，20MB 以内 | 待团队提供 |
 
 ## 公开仓库提交前检查
